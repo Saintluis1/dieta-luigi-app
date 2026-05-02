@@ -46,7 +46,7 @@ export default function PlanScreen() {
           {MEAL_ORDER.filter((m) => day.meals[m]).map((mealKey) => {
             const items = day.meals[mealKey].map((it) => {
               const sub = substitutions[subKey(mealKey, it.id)];
-              return sub ? { ...sub, swappable: it.swappable, swap_pool: it.swap_pool } : it;
+              return sub ? { ...sub, swappable: it.swappable, swap_pool: it.swap_pool, _origId: it.id } : it;
             });
             return (
               <MealCard
@@ -65,7 +65,8 @@ export default function PlanScreen() {
         item={swapTarget?.item}
         onClose={() => setSwapTarget(null)}
         onPick={(alt) => {
-          setSub(activeDayId, swapTarget.mealKey, swapTarget.item.id, alt);
+          const origId = swapTarget.item._origId ?? swapTarget.item.id;
+          setSub(activeDayId, swapTarget.mealKey, origId, alt);
           setSwapTarget(null);
         }}
       />
