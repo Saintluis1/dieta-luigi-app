@@ -1,0 +1,77 @@
+{
+  "_schema": {
+    "description": "Luigi's anthropometric data and BIA results.",
+    "source": "esame_biompedenza.pdf (27/04/2026), Dieta.pdf antropometric page (29/04/2026)"
+  },
+  "personal": {
+    "name": "Luigi Lafiandra",
+    "age": 28,
+    "sex": "M",
+    "height_cm": 178
+  },
+  "anthropometry": {
+    "weight_current_kg": 77.5,
+    "weight_target_kg": 71.0,
+    "bmi": 24.5,
+    "bmi_range": "18.5 - 24.9",
+    "bmr_kcal": 1672,
+    "wh_ratio": 0.84,
+    "wh_ratio_max": 1.0,
+    "wrist_cm": 16.5,
+    "waist_cm": 88,
+    "hip_cm": 105,
+    "activity_level": "a-riposo"
+  },
+  "bia": {
+    "exam_date": "2026-04-27T18:24:00",
+    "device": "Akern Bioresearch",
+    "model": "tricompartimentale",
+    "bioelectrical": {
+      "resistance_ohm": 573,
+      "reactance_ohm": 66,
+      "phase_angle_deg": 6.6,
+      "rz_h_ohm_per_m": 321.9,
+      "xc_h_ohm_per_m": 37.1
+    },
+    "composition_kg_per_m": {
+      "tbw":     { "current": 11.9, "reference": 6,  "delta_per_m": 5.9,  "delta_kg": 10.5 },
+      "ffm":     { "current": 31.6, "reference": 33, "delta_per_m": -1.4, "delta_kg": -2.4 },
+      "bcm":     { "current": 17.9, "reference": 17, "delta_per_m": 0.9,  "delta_kg": 1.5 },
+      "ecm":     { "current": 13.8, "reference": 16, "delta_per_m": -2.2, "delta_kg": -4.0 }
+    },
+    "composition_percent": {
+      "ffm_kg": 56.3,
+      "ffm_pct_weight": 73,
+      "bcm_kg": 31.8,
+      "bcm_pct_ffm": 56,
+      "ecm_kg": 24.5,
+      "ecm_pct_ffm": 44,
+      "fm_kg": 21.2,
+      "fm_pct_weight": 27,
+      "at_kg": 18.7,
+      "at_pct_fm": 88,
+      "ef_kg": 2.5,
+      "ef_pct_fm": 12
+    },
+    "reference_percent": {
+      "ffm_pct_weight": 83,
+      "fm_pct_weight": 17,
+      "bcm_pct_ffm": 52,
+      "ecm_pct_ffm": 48,
+      "at_pct_fm": 79,
+      "ef_pct_fm": 21
+    }
+  },
+  "_glossary": {
+    "tbw": "Total Body Water — acqua corporea totale",
+    "ffm": "Fat-Free Mass — massa magra",
+    "fm":  "Fat Mass — massa grassa",
+    "bcm": "Body Cell Mass — massa cellulare (parte attiva della FFM)",
+    "ecm": "Extra-Cellular Mass — massa extracellulare",
+    "at":  "Adipose Tissue — tessuto adiposo",
+    "ef":  "Essential Fat — grasso essenziale",
+    "bmr": "Basal Metabolic Rate — metabolismo basale",
+    "bmi": "Body Mass Index — indice di massa corporea",
+    "wh_ratio": "Waist-Hip Ratio — rapporto vita-fianchi"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "_schema": {
+    "description": "Luigi's weekly meal plan. Source: Dieta.pdf (29/04/2026).",
+    "shape": "Array of 7 days. Each day has 5 meals. Each meal has an array of items.",
+    "item_fields": {
+      "id": "stable identifier, kebab-case",
+      "name": "italian name as in the dietitian's plan",
+      "grams": "weight in grams, raw, net of waste",
+      "category": "one of: snack | protein | vegetable | grain | legume | dairy | fat | bakery | beverage | composite",
+      "reparto": "supermarket department: pescheria | macelleria | ortofrutta-verdure | ortofrutta-frutta | dispensa | panetteria | latticini-uova | pizzeria",
+      "swappable": "boolean — whether the item can be swapped via the alternatives database",
+      "swap_pool": "if swappable, which alternatives.json pool to use: snack | protein | vegetable | null",
+      "note": "optional free-text note (e.g., 'no zucchero')"
+    }
+  },
+  "days": [
+    {
+      "day": "lunedi",
+      "label": "Lunedì",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero, max 2/giorno lontano dai pasti" },
+          { "id": "ciambelline-integrali", "name": "Ciambelline integrali", "grams": 39, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "pasta-semola", "name": "Pasta di semola di grano duro", "grams": 70, "category": "grain", "reparto": "dispensa", "swappable": false },
+          { "id": "zucchine", "name": "Zucchine", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable" },
+          { "id": "uova-sode", "name": "Uovo di gallina (n.2 sode)", "grams": 120, "category": "protein", "reparto": "latticini-uova", "swappable": false },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "pollo-disossato", "name": "Pollo disossato", "grams": 200, "category": "protein", "reparto": "macelleria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false },
+          { "id": "pane-integrale", "name": "Pane integrale", "grams": 100, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ]
+      }
+    },
+    {
+      "day": "martedi",
+      "label": "Martedì",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero" },
+          { "id": "plum-cake-integrale", "name": "Plum cake integrale", "grams": 33, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "pasta-riso", "name": "Pasta o riso", "grams": 60, "category": "grain", "reparto": "dispensa", "swappable": false },
+          { "id": "lenticchie", "name": "Lenticchie", "grams": 60, "category": "legume", "reparto": "dispensa", "swappable": false },
+          { "id": "piselli", "name": "Piselli (freschi o surgelati)", "grams": 150, "category": "legume", "reparto": "ortofrutta-verdure", "swappable": false },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "salmone-fresco", "name": "Salmone fresco", "grams": 200, "category": "protein", "reparto": "pescheria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false },
+          { "id": "pane-integrale", "name": "Pane integrale", "grams": 100, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ]
+      }
+    },
+    {
+      "day": "mercoledi",
+      "label": "Mercoledì",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero" },
+          { "id": "ciambelline-integrali", "name": "Ciambelline integrali", "grams": 39, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "pasta-semola", "name": "Pasta di semola di grano duro", "grams": 100, "category": "grain", "reparto": "dispensa", "swappable": false },
+          { "id": "passata-pomodoro", "name": "Pomodori / passata", "grams": 50, "category": "vegetable", "reparto": "dispensa", "swappable": false },
+          { "id": "formaggio-condimento", "name": "Formaggio da condimento", "grams": 10, "category": "dairy", "reparto": "latticini-uova", "swappable": false },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "hamburger-pollo-tacchino", "name": "Hamburger pollo-tacchino", "grams": 200, "category": "protein", "reparto": "macelleria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false },
+          { "id": "pane-integrale", "name": "Pane integrale", "grams": 100, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ]
+      }
+    },
+    {
+      "day": "giovedi",
+      "label": "Giovedì",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero" },
+          { "id": "plum-cake-integrale", "name": "Plum cake integrale", "grams": 33, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "patate", "name": "Patate", "grams": 300, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": false },
+          { "id": "tonno-naturale", "name": "Tonno al naturale (in vetro)", "grams": 120, "category": "protein", "reparto": "dispensa", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "orata-filetti", "name": "Orata (filetti)", "grams": 250, "category": "protein", "reparto": "pescheria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false },
+          { "id": "pane-integrale", "name": "Pane integrale", "grams": 100, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ]
+      }
+    },
+    {
+      "day": "venerdi",
+      "label": "Venerdì",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero" },
+          { "id": "ciambelline-integrali", "name": "Ciambelline integrali", "grams": 39, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "pasta-semola", "name": "Pasta di semola di grano duro", "grams": 70, "category": "grain", "reparto": "dispensa", "swappable": false },
+          { "id": "bieta", "name": "Bieta", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable" },
+          { "id": "ricotta", "name": "Ricotta", "grams": 100, "category": "dairy", "reparto": "latticini-uova", "swappable": false },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "coscia-pollo", "name": "Coscia di pollo senza pelle", "grams": 200, "category": "protein", "reparto": "macelleria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false },
+          { "id": "pane-integrale", "name": "Pane integrale", "grams": 100, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ]
+      }
+    },
+    {
+      "day": "sabato",
+      "label": "Sabato",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero" },
+          { "id": "plum-cake-integrale", "name": "Plum cake integrale", "grams": 33, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "pasta-semola", "name": "Pasta di semola di grano duro", "grams": 60, "category": "grain", "reparto": "dispensa", "swappable": false },
+          { "id": "minestrone-fresco", "name": "Minestrone fresco", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": false },
+          { "id": "spigola", "name": "Spigola", "grams": 200, "category": "protein", "reparto": "pescheria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "pizza-veg", "name": "Pizza vegetariana o crudaiola", "grams": 350, "category": "composite", "reparto": "pizzeria", "swappable": false, "note": "pasto libero del sabato sera" }
+        ]
+      }
+    },
+    {
+      "day": "domenica",
+      "label": "Domenica",
+      "meals": {
+        "colazione": [
+          { "id": "caffe", "name": "Caffè", "grams": 40, "category": "beverage", "reparto": "dispensa", "swappable": false, "note": "no zucchero" },
+          { "id": "ciambelline-integrali", "name": "Ciambelline integrali", "grams": 39, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ],
+        "spuntino": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "pranzo": [
+          { "id": "pasta-semola", "name": "Pasta di semola di grano duro", "grams": 100, "category": "grain", "reparto": "dispensa", "swappable": false },
+          { "id": "condimento-piacere", "name": "Condimento a piacere", "grams": 50, "category": "composite", "reparto": "dispensa", "swappable": false },
+          { "id": "vitello-magro", "name": "Vitello magro", "grams": 150, "category": "protein", "reparto": "macelleria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false }
+        ],
+        "merenda": [
+          { "id": "frutta-stagione", "name": "Frutta fresca di stagione", "grams": 200, "category": "snack", "reparto": "ortofrutta-frutta", "swappable": true, "swap_pool": "snack" }
+        ],
+        "cena": [
+          { "id": "fesa-tacchino", "name": "Fesa di tacchino", "grams": 100, "category": "protein", "reparto": "macelleria", "swappable": true, "swap_pool": "protein" },
+          { "id": "verdure-obb", "name": "Verdure / ortaggi", "grams": 200, "category": "vegetable", "reparto": "ortofrutta-verdure", "swappable": true, "swap_pool": "vegetable", "note": "obbligatorio" },
+          { "id": "olio-evo", "name": "Olio di oliva extravergine", "grams": 20, "category": "fat", "reparto": "dispensa", "swappable": false },
+          { "id": "pane-integrale", "name": "Pane integrale", "grams": 100, "category": "bakery", "reparto": "panetteria", "swappable": false }
+        ]
+      }
+    }
+  ]
+}
