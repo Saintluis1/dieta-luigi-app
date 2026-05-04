@@ -282,6 +282,14 @@
       "reparto": "pescheria"
     }
   ],
+  "legume": [
+    {
+      "id": "piselli",
+      "name": "Piselli (freschi o surgelati)",
+      "grams": 150,
+      "reparto": "ortofrutta-verdure"
+    }
+  ],
   "vegetable": [
     {
       "id": "asparagi",

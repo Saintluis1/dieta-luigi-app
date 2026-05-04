@@ -55,3 +55,13 @@ export async function saveTrackingEntry(dateISO, mealKey, entry) {
   const db = await dbPromise;
   return db.put('tracking', entry, `${dateISO}|${mealKey}`);
 }
+
+export async function loadShoppingChecked(weekKey) {
+  const db = await dbPromise;
+  return (await db.get('shopping', weekKey)) ?? [];
+}
+
+export async function saveShoppingChecked(weekKey, checkedArray) {
+  const db = await dbPromise;
+  return db.put('shopping', checkedArray, weekKey);
+}

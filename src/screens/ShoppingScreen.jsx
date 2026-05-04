@@ -1,10 +1,26 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { buildShoppingList } from '../lib/shoppingList.js';
 import { useAppStore } from '../lib/store.js';
+import { loadShoppingChecked, saveShoppingChecked } from '../lib/db.js';
+
+function getCurrentWeekKey() {
+  const today = new Date();
+  const dow = today.getDay();
+  const monday = new Date(today);
+  monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
+  monday.setHours(0, 0, 0, 0);
+  return monday.toISOString().slice(0, 10);
+}
+
+const WEEK_KEY = getCurrentWeekKey();
 
 export default function ShoppingScreen() {
   const substitutions = useAppStore((s) => s.substitutions);
   const [checked, setChecked] = useState(new Set());
+
+  useEffect(() => {
+    loadShoppingChecked(WEEK_KEY).then((arr) => setChecked(new Set(arr)));
+  }, []);
 
   const sections = useMemo(() => {
     const subList = Object.entries(substitutions).map(([key, replacement]) => {
@@ -14,12 +30,14 @@ export default function ShoppingScreen() {
     return buildShoppingList(subList);
   }, [substitutions]);
 
-  const toggle = (name) =>
+  const toggle = (name) => {
     setChecked((prev) => {
       const next = new Set(prev);
       next.has(name) ? next.delete(name) : next.add(name);
+      saveShoppingChecked(WEEK_KEY, [...next]);
       return next;
     });
+  };
 
   return (
     <div className="px-4 pt-6">

@@ -178,15 +178,8 @@
             "grams": 60,
             "category": "legume",
             "reparto": "dispensa",
-            "swappable": false
-          },
-          {
-            "id": "piselli",
-            "name": "Piselli (freschi o surgelati)",
-            "grams": 150,
-            "category": "legume",
-            "reparto": "ortofrutta-verdure",
-            "swappable": false
+            "swappable": true,
+            "swap_pool": "legume"
           },
           {
             "id": "verdure-obb",
