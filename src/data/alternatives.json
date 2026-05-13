@@ -284,6 +284,12 @@
   ],
   "legume": [
     {
+      "id": "lenticchie",
+      "name": "Lenticchie",
+      "grams": 60,
+      "reparto": "dispensa"
+    },
+    {
       "id": "piselli",
       "name": "Piselli (freschi o surgelati)",
       "grams": 150,

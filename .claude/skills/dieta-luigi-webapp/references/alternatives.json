@@ -61,6 +61,10 @@
     { "id": "vitello-magro", "name": "Vitello magro", "grams": 200, "reparto": "macelleria" },
     { "id": "zuppa-pesce", "name": "Zuppa di pesce", "grams": 250, "reparto": "pescheria" }
   ],
+  "legume": [
+    { "id": "lenticchie", "name": "Lenticchie", "grams": 60, "reparto": "dispensa" },
+    { "id": "piselli", "name": "Piselli (freschi o surgelati)", "grams": 150, "reparto": "ortofrutta-verdure" }
+  ],
   "vegetable": [
     { "id": "asparagi", "name": "Asparagi", "grams": 200, "reparto": "ortofrutta-verdure" },
     { "id": "barattieri", "name": "Barattieri", "grams": 200, "reparto": "ortofrutta-verdure" },
